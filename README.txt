@@ -2,7 +2,7 @@ Visualization on shinnyapps:
 https://bella-y-wang.shinyapps.io/ny_events/
 
 
-1. Go to the 'paper/' directory. To get all the project dependency, run:
+1. To set up project dependency, run:
 pip install -r requirements.txt
 
 
