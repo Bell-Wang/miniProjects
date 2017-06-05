@@ -5,7 +5,7 @@ library(shinythemes)
 
 navbarPage(theme = shinytheme('flatly'),
   "Events in New York", id='nav',
-           tabPanel("Evens in NY",
+           tabPanel("Events in NY",
                     
                     div(class = 'outer',
                         tags$head(
@@ -21,7 +21,7 @@ navbarPage(theme = shinytheme('flatly'),
                                                   value = c(as.POSIXct('2014-01-01 00:00:00'), as.POSIXct('2014-02-24 20:07:50')),
                                                   timeFormat = "%F %T")
                                       ))),
-          tabPanel("Evens in NY - Animation",
+          tabPanel("Events in NY - Animation",
                    div(class = 'outer',
                     tags$head(
                       includeCSS("styles.css")
