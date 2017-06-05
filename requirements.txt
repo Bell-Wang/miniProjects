@@ -1,0 +1,8 @@
+
+numpy
+pandas == 0.19.2
+sklearn
+nltk
+gensim == 1.0.1
+matplotlib
+

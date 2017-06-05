@@ -1,0 +1,6 @@
+viz_df <- read.csv("viz_df.csv")
+viz_df$created_time <- strptime(viz_df$created_time, '%Y-%m-%d %H:%M:%S')
+viz_df$mid_lat <- as.numeric(viz_df$mid_lat)
+viz_df$mid_lng <- as.numeric(viz_df$mid_lng)
+viz_df$oid <- as.character(viz_df$oid)
+viz_df$text <- as.character(viz_df$text)
