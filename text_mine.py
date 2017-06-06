@@ -130,8 +130,31 @@ def tfidf_kmean(num_clusters, num_term):
 my_dataframe, cluster_term = tfidf_kmean(6, 7)
 my_dataframe.cluster.value_counts()
 
-my_dataframe['topic'] = np.where()
-{0: 'Concert',
+my_dataframe['topic'] = None
+for i in range(my_dataframe.shape[0]):
+    if my_dataframe.cluster[i] == 0:
+        my_dataframe['topic'][i] = 'Concert'
+    elif my_dataframe.cluster[i] == 1:
+        my_dataframe['topic'][i] = 'Holiday'
+    elif my_dataframe.cluster[i] ==2:
+        my_dataframe['topic'][i] = 'Party'
+    elif my_dataframe.cluster[i] ==3:
+        my_dataframe['topic'][i] = 'Fashion'
+    elif my_dataframe.cluster[i] == 4:
+        my_dataframe['topic'][i] = 'Superbowl'
+    else:
+        my_dataframe['topic'][i] = 'Game'
+        
+viz_df_cols =viz_df.loc[:, ['created_time', 'oid', 'mid_lat', 'mid_lng']].groupby(['oid']).min() 
+viz_df_cols = viz_df_cols.reset_index()
+mydataframe = pd.merge(my_dataframe, viz_df_cols, left_on = 'event', right_on = 'oid')    
+cd = [i[:10] for i in mydataframe['created_time']]
+mydataframe['created_day'] = cd
+
+#### TOPIC FREQUENCY           
+mydataframe.loc[:, ['created_day', 'topic', 'event']].groupby(['topic', 'created_day']).count()
+     
+ {0: 'Concert',
  1: 'Holiday',
  2: 'Party',
  3: 'Fashion',
