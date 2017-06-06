@@ -8,14 +8,14 @@ This is a temporary script file.
 import json
 import datetime
 
-with open("data/twitter_classifier_training_data.json") as file:
+with open("/Users/bella/Downloads/twitter_classifier_training_data.json") as file:
     my_json= file.readlines()
 
 dict_list_tw =[json.loads(i) for i in my_json]
 target_list_tw = [i for i in dict_list_tw if i.get('label')==1]
 
 
-with open("data/instagram_classifier_training_data.json") as file2:
+with open("/Users/bella/Downloads/instagram_classifier_training_data.json") as file2:
     my_json2= file2.readlines()
 
 dict_list_in =[json.loads(i) for i in my_json2]
